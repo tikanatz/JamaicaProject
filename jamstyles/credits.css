@@ -1,0 +1,5 @@
+@charset "utf-8";
+/*******************************************     CSS Document   *******************************************************/
+.top-bar {   /*references the name of the header class*/
+    position: static;
+}

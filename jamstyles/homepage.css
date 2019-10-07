@@ -1,0 +1,610 @@
+@charset "utf-8";
+/*******************************************     CSS Document   ********************************************************
+* This is the stylesheet for my Country project.  Utilizing information shared during class to prepare the layout of my*
+* website.                                                                                                             *
+*                                                                                                                      *
+*****************************************   Box-Sizing Reset Parameters   *********************************************/
+html {
+    box-sizing: border-box;
+    font-family: 'Frank Ruhl Libre', 'Aladin', 'Rancho', 'Berkshire Swash', cursive, serif;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Responsive Images Reset */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Body Reset */
+body {
+    margin: 0;
+}
+
+/* Typography Resets */
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+}
+
+article h1, article h2,
+section h1, section h2, section h3 {
+    margin-top: 0;
+    color: #21433B;
+    font-weight: bold;
+    font-family: 'Aladin', cursive;
+}
+
+article p, section p, li{
+    font-family: "Trebuchet MS", Garamond, sans-serif;
+    line-height: 1.5;
+}
+
+
+/*************************************        Google Font Definition      *********************************************/
+@font-face {
+    font-family: 'Frank Ruhl Libre', serif;
+
+    font-family: 'Berkshire Swash', cursive;
+
+    font-family: 'Rancho', cursive;
+
+    font-family: 'Aladin', cursive;
+
+
+}
+/*******************************************        Table      *******************************************************/
+.population table {
+    justify-self: center;
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 20vmax;
+    margin: 2vh 35%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+/*******************************************        Header      *******************************************************/
+    background: linear-gradient(to top, #4f7068 0%,#285147 26%,#21433B 78%,#162d27 100%);  /*Sets the gradient scheme from red to darker red*/
+    padding: 0;
+    margin: 0;
+    height: 25vh;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+top-bar {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    z-index: 100;
+    font-family: 'Rancho', cursive;
+    font-size: 4rem;
+}
+
+header a {
+    text-align: right;
+    text-decoration: none;
+    color: #285147;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+}
+
+/*******************************************         Body       *******************************************************/
+html,
+body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, nav a {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";  /*<== Please update when you decide which font to use*/
+}
+
+.wrapper {
+    display: block;
+    max-width: 200vmin;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {   //Defining responsive-background-images
+    background-image: url(../images/bg-vancouver-large.jpg);
+    backkground-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-font: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";  /*<== Please update when you decide which font to use*/
+}
+
+main {
+    margin-top: 0px;
+    padding: 30px;
+    position: relative;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+main article:first-child h2 {
+    margin-top: 0;
+}
+
+main p:last-child {
+    margin-bottom: 0;
+}
+
+.page-content-wrap {
+    max-width: 200vmax;
+    margin: 0 auto;
+    padding: 0;
+}
+
+section{
+    margin-top: 2vh;
+    padding: 0;
+}
+section h1:before,
+article h1:before {
+    display: block;
+    content: "";
+    margin-top: -76px;
+    height: 76px;
+    visibility: hidden;
+}
+/*******************************************        Footer      *******************************************************/
+footer {
+    border-top: 1px dotted #ccc;
+    padding: 30px;
+    position: relative;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    background-color: lightgrey;
+    font-family: 'Frank Ruhl Libre', serif;
+    }
+
+footer p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+footer .contact {
+    text-align: right;
+}
+
+
+/***************************************  Responsive Slide Out Menu ****************************************************/
+button.menu {
+    display: none;
+}
+
+nav {
+    height: 75px;
+    position: relative;
+    display: block;
+    padding: 0;
+    background-color: white;
+    margin: 37px 0 0;
+    z-index: 0;
+}
+
+nav ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+nav li {
+    width: calc(50% / 5);
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    border-right: 2px solid #285147;
+    border-bottom: 2px solid #285147;
+    line-height: 75px;
+    text-align: center;
+    align-self: flex-end;
+}
+
+nav li:last-child a {
+    border-right: none;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus,
+nav a:focus-within {
+    background-color: #E3E3E3;
+    outline: none;
+}
+
+/*******************************************    Utility Classes    *****************************************************
+* Screen Reader only class...used to hide text content but still make it accessible to screen readers.                 *
+* This code is from Bootstrap 3 ...and was taken from this Stackoverflow question and answer:                          *
+* https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3                                          *
+***********************************************************************************************************************/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/******************************************* Hero Slider Styles ***************************************************/
+.hero-slider {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    height: auto;
+    width: 50vw;
+    margin: 5%;
+    z-index: 900;
+    overflow: hidden;
+
+}
+
+/*Layout for the arrows on the top images*/
+.prev,
+.next {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    width: 16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/*Defining position for left arrow*/
+.prev {
+    left: 10px;
+}
+
+/*Defining position for right arrow*/
+.next {
+    right: 10px;
+}
+
+.hero-slider-th-container {
+    display: flex;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.03);
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    transform: translateY(20px);
+
+}
+
+.hero-slider-th-container a {
+    width: 20px;
+    margin-right: 2px;
+
+}
+
+.hero-slider-th-container img {
+    display: block;
+}
+
+/******************************************* Picture Element Styles ***************************************************/
+article img {
+    float: right;
+    width: 43%;
+    margin-left: 20px;
+}
+/****************************************** Media (max-width: 560px) **************************************************/
+@media screen and (max-width: 560px){
+    body {
+        background-image: url("");  /*Definition for responsive image*/
+        background-color: black;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /*References the body div class="wrapper"*/
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        top: 0;
+        left: 0;
+        width: 100%
+        padding: 0 20px;
+        margin: 0;
+        /*position: fixed;*/
+    }
+
+    button.menu {
+        display: block;
+        width: 40px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    button.menu .button-content {
+        display: block;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    button.menu .text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+
+    button.menu .bar {
+        display: block;
+        height: 4px;
+        background-color: white;
+        width: 100%;
+        position: relative;
+        top: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button.menu .bar:before {
+        content: "";
+        width: 100%;
+        height: 4px;
+        top: 10px;
+        left: 0;
+        background-color: white;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button.menu .bar:after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        top: -10px;
+        left: 0;
+        background-color: white;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button.menu:focus,
+    .button-content:focus {
+        outline: none;
+    }
+
+    button.menu:focus .button-content {
+        outline: 5px solid #7683C9;
+    }
+
+    .show button.menu .bar {
+        background-color: transparent;
+    }
+
+    .show button.menu .bar:before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .show button.menu .bar:after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background-color: black;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        border-right: none;
+        color: white;
+        border-bottom: none;
+        border-top: 2px solid #555555;
+        line-height: 40px;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    nav li:first-child a {
+        border-top: none;
+    }
+
+    nav li:last-child a {
+        border-bottom: 2px solid #555555;
+    }
+
+    nav a:hover,
+    nav a:active,
+    nav a:focus {
+        background-color: rgba(255,255,255, 0.3);
+    }
+
+    main {
+        flex: 1;
+    }
+
+    .show main,
+    .show footer {
+        transform: translateX(90%);
+    }
+
+    .population table {
+        justify-self: left;
+
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 10vmax;
+        margin: 2vh 10%;
+    }
+
+    .hero-slider {
+        top: 10%;
+        left: 2%;
+        height: auto;
+        width: 75vmin;
+        margin: 2.5%;
+        z-index: 900;
+        overflow: hidden;
+
+    }
+
+    .hero-slider-th-container {
+        display: flex;
+        z-index: 100;
+        background-color: rgba(0,0,0,0.03);
+        position: absolute;
+        bottom: 20px;
+        left: 35%;
+        border-radius: 5px;
+        border: 1px solid white;
+        padding: 5px;
+        transform: translateY(20px);
+
+    }
+
+    h1 {
+       margin-top: 40vh;
+        font-family: 'Rancho', cursive;
+    }
+
+   h1, h2 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+/****************************************** Media (max-width: 800px) **************************************************/
+@media screen and (min-width: 800px){
+
+    body {
+        background-image: url("");  /*Definition for responsive images for tables*/
+    }
+
+    header {
+        position: relative;
+    }
+
+    .top-bar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+    }
+
+.page-content-wrap {
+    height: 50px;
+    /*padding: 50px 50px;*/
+}
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+/****************************************** Media (max-width: 1200px) **************************************************/
+@media screen and (min-width: 800px) {
+
+
+    body {
+        background-image: url( );  /*Definition for responsive images for tables*/
+    }
+
+    header {
+        position: relative;
+    }
+
+    .top-bar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+    }
+
+    .page-content-wrap {
+        padding: 0;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
