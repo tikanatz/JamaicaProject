@@ -1,14 +1,16 @@
 @charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
+
 /*******************************************     CSS Document   ********************************************************
 * This is the stylesheet for my Country project.  Utilizing information shared during class to prepare the layout of my*
 * website.                                                                                                             *
-*                                                                                                                      *
+*           Fix 474                                                                                                    *
 *****************************************   Box-Sizing Reset Parameters   *********************************************/
+
 html {
     box-sizing: border-box;
-    font-family: 'Frank Ruhl Libre', 'Aladin', 'Rancho', 'Berkshire Swash', cursive, serif;
-    scroll-behavior: smooth;
-}
+ }
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -29,31 +31,9 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
 }
 
-article h1, article h2,
-section h1, section h2, section h3 {
-    margin-top: 0;
-    color: #21433B;
-    font-weight: bold;
-    font-family: 'Aladin', cursive;
-}
-
-article p, section p, li{
-    font-family: "Trebuchet MS", Garamond, sans-serif;
-    line-height: 1.5;
-}
-
-
 /*************************************        Google Font Definition      *********************************************/
 @font-face {
-    font-family: 'Frank Ruhl Libre', serif;
-
-    font-family: 'Berkshire Swash', cursive;
-
-    font-family: 'Rancho', cursive;
-
-    font-family: 'Aladin', cursive;
-
-
+    font-family: 'Frank Ruhl Libre', 'Aladin', 'Berkshire Swash','Rancho',cursive, serif;
 }
 /*******************************************        Table      *******************************************************/
 .population table {
@@ -81,83 +61,139 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-
 /*******************************************        Header      *******************************************************/
+   header{
     background: linear-gradient(to top, #4f7068 0%,#285147 26%,#21433B 78%,#162d27 100%);  /*Sets the gradient scheme from red to darker red*/
     padding: 0;
     margin: 0;
-    height: 25vh;
+    height: 15vh;
     width: 100%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     position: fixed;
-    top: 0;
-    left: 0;
-}
-
-top-bar {
-    width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 5%;
     padding: 0;
-    line-height: 1;
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    z-index: 100;
+    line-height: 2;
     font-family: 'Rancho', cursive;
-    font-size: 4rem;
+    font-size: 3rem;
+    align-self: center;
+    justify-self: center;
 }
 
 header a {
-    text-align: right;
+    text-align: center;
     text-decoration: none;
-    color: #285147;
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
-    z-index: 9999;
+}
+
+.logo {
+    width: 50%;
+    order: -1;
+}
+
+.logo img {
+    display: block;
+}
+/***************************************  Responsive Slide Out Menu ***************************************************/
+button.menu {
+    display: none;
+}
+
+nav {
+    margin: 20px 0 0;  /*11-Oct*/
+    z-index: 999;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    width: calc(100% / 8);
+}
+
+nav a {
+    text-decoration: none;
+    line-height: 5%;
+    text-align: center;
+    display: block;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus {
+    background-color: yellow;
+    outline: none;
 }
 
 /*******************************************         Body       *******************************************************/
 html,
 body {
+    scroll-behavior: smooth;
     height: 100%;
+    font-size: 2vh;
 }
 
-h1, h2, h3, h4, h5, nav a {
-    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";  /*<== Please update when you decide which font to use*/
+body {   /*Defining responsive-background-images*/
+    /*background-size: cover;*/
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Frank Ruhl Libre', 'Aladin', 'Rancho', 'Berkshire Swash', cursive, serif;
 }
 
 .wrapper {
-    display: block;
-    max-width: 200vmin;
+    /*display: block;*/
+    max-width: 100vmax;
     margin: 0 auto;
     padding: 0;
 }
 
-body {   //Defining responsive-background-images
-    background-image: url(../images/bg-vancouver-large.jpg);
-    backkground-attachment: fixed;
-    background-size: cover;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    margin: 0;
+h1, h2, h3, h4, h5, nav a {
+    font-family: 'Frank Ruhl Libre', 'Aladin', 'Rancho', 'Berkshire Swash', cursive, serif;
+}
+
+article h1, article h2,
+section h1, section h2,
+aside h1, aside h2
+{
+    margin-top: 0;
+    color: #21433B;
+    font-weight: bold;
+    font-family: 'Aladin', cursive;
+    font-size: 4rem;
+}
+
+article img {
+    align-self: flex-end;
+}
+
+article p, section p, aside p, li{
+    font-family: "Trebuchet MS", Garamond, sans-serif;
+    line-height: 1.5;
+}
+
+aside blockquote {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 3rem;
     padding: 0;
-    font-font: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";  /*<== Please update when you decide which font to use*/
+    margin: 5% 0;
+}
+aside span {
+    font-weight: bolder;
 }
 
 main {
-    margin-top: 0px;
-    padding: 30px;
+    padding: 1vh;
     position: relative;
-    z-index: 9999;
-    transition: transform 0.3s ease;
-    background-color: white;
 }
 
 main article:first-child h2 {
@@ -178,20 +214,25 @@ section{
     margin-top: 2vh;
     padding: 0;
 }
-section h1:before,
-article h1:before {
-    display: block;
-    content: "";
-    margin-top: -76px;
-    height: 76px;
-    visibility: hidden;
+
+section ul {
+    list-style: none;
 }
+
+/*section h2:before,*/
+/*article h2:before {*/
+/*    display: block;*/
+/*    content: "";*/
+/*    margin-top: -76px;*/
+/*    height: 76px;*/
+/*    visibility: hidden;*/
+/*}*/
 /*******************************************        Footer      *******************************************************/
 footer {
     border-top: 1px dotted #ccc;
     padding: 30px;
     position: relative;
-    z-index: 9999;
+    z-index: 999;
     transition: transform 0.3s ease;
     background-color: lightgrey;
     font-family: 'Frank Ruhl Libre', serif;
@@ -203,60 +244,9 @@ footer p {
 }
 
 footer .contact {
-    text-align: right;
+    text-align: left;
 }
 
-
-/***************************************  Responsive Slide Out Menu ****************************************************/
-button.menu {
-    display: none;
-}
-
-nav {
-    height: 75px;
-    position: relative;
-    display: block;
-    padding: 0;
-    background-color: white;
-    margin: 37px 0 0;
-    z-index: 0;
-}
-
-nav ul {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-nav li {
-    width: calc(50% / 5);
-}
-
-nav a {
-    color: black;
-    text-decoration: none;
-    border-right: 2px solid #285147;
-    border-bottom: 2px solid #285147;
-    line-height: 75px;
-    text-align: center;
-    align-self: flex-end;
-}
-
-nav li:last-child a {
-    border-right: none;
-}
-
-nav a:hover,
-nav a:active,
-nav a:focus,
-nav a:focus-within {
-    background-color: #E3E3E3;
-    outline: none;
-}
 
 /*******************************************    Utility Classes    *****************************************************
 * Screen Reader only class...used to hide text content but still make it accessible to screen readers.                 *
@@ -277,14 +267,15 @@ nav a:focus-within {
 /******************************************* Hero Slider Styles ***************************************************/
 .hero-slider {
     position: relative;
-    top: 10%;
-    left: 5%;
-    height: auto;
-    width: 50vw;
-    margin: 5%;
+    top: 0;
+    left: 10vw;
+    transform: translate(-5%, 0%);
+    height: 60vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     z-index: 900;
     overflow: hidden;
-
 }
 
 /*Layout for the arrows on the top images*/
@@ -317,13 +308,12 @@ nav a:focus-within {
     z-index: 100;
     background-color: rgba(0,0,0,0.03);
     position: absolute;
-    bottom: 20px;
+    bottom: 10%;
     left: 45%;
     border-radius: 5px;
     border: 1px solid white;
     padding: 5px;
     transform: translateY(20px);
-
 }
 
 .hero-slider-th-container a {
@@ -342,13 +332,17 @@ article img {
     width: 43%;
     margin-left: 20px;
 }
-/****************************************** Media (max-width: 560px) **************************************************/
-@media screen and (max-width: 560px){
+/****************************************** Media (max-width: 750px) **************************************************/
+@media screen and (max-width: 750px){
     body {
-        background-image: url("");  /*Definition for responsive image*/
-        background-color: black;
         min-height: 100vh;
         overflow-x: hidden;
+    }
+
+    article p, section p, aside p, li{
+        font-family: "Trebuchet MS", Garamond, sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.5;
     }
 
     /*References the body div class="wrapper"*/
@@ -359,12 +353,20 @@ article img {
     }
 
     header {
-        top: 0;
-        left: 0;
-        width: 100%
-        padding: 0 20px;
-        margin: 0;
-        /*position: fixed;*/
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    h1 {
+        margin-top: 40vh;
+        font-family: 'Rancho', cursive;
+    }
+
+    h1, h2 {
+        text-align: center;
+        margin-bottom: 0;
     }
 
     button.menu {
@@ -373,6 +375,8 @@ article img {
         background-color: transparent;
         border: none;
         padding: 0;
+        position: relative;
+        z-index: 9999;
     }
 
     button.menu .button-content {
@@ -454,10 +458,23 @@ article img {
         width: 100%;
         margin: 0;
         background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+    }
+
+    nav.activated {
+        transition: transform 0.3s ease;
+    }
+
+    .show nav {
+        transform: scale(1);
     }
 
     nav ul {
         flex-direction: column;
+        width: 260px;
     }
 
     nav li {
@@ -470,26 +487,26 @@ article img {
         border-bottom: none;
         border-top: 2px solid #555555;
         line-height: 40px;
-        text-align: left;
-        padding-left: 30px;
-    }
-
-    nav li:first-child a {
-        border-top: none;
-    }
-
-    nav li:last-child a {
-        border-bottom: 2px solid #555555;
+        justify-content: space-between;
+        padding-left: 20px;
+        text-align: center;
+        margin: 0;
     }
 
     nav a:hover,
     nav a:active,
     nav a:focus {
-        background-color: rgba(255,255,255, 0.3);
+        background-color: rgba(255, 255, 255, 0.3);
     }
 
+    /************************      Main Flex Container Parameters      **********************************************/
     main {
         flex: 1;
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .show main,
@@ -497,9 +514,30 @@ article img {
         transform: translateX(90%);
     }
 
-    .population table {
-        justify-self: left;
+    /********************************      Alignment of Main Welcome Content      ************************************/
+    #section-01 {
+        box-sizing: border-box;
+        border-bottom: 1px dashed midnightblue;
+        padding: 5% 5%;
+        flex: 0 0 100%;
+    }
 
+    #section-01 h2 {
+        text-align: center;
+    }
+
+    /***********************************      Alignment of Jamaican Proverbs       ***********************************/
+    .lcl-proverb {
+        padding: 5%;
+        flex: 1 1 40%;
+        order: 1;
+        border-top: 1px dashed midnightblue;
+    }
+    /***********************************      Population Growth Parameters       ***********************************/
+    .population {
+        padding: 5%;
+        order: 2;
+        border-top: 1px dashed midnightblue;
     }
 
     table {
@@ -508,22 +546,21 @@ article img {
         width: 10vmax;
         margin: 2vh 10%;
     }
-
+/***********************************      Hero Slider Parameters       ***********************************/
     .hero-slider {
-        top: 10%;
-        left: 2%;
+        padding: 2px;
+        flex: 0 0 90%;
         height: auto;
         width: 75vmin;
-        margin: 2.5%;
         z-index: 900;
         overflow: hidden;
-
+        order: -1;
     }
 
     .hero-slider-th-container {
         display: flex;
         z-index: 100;
-        background-color: rgba(0,0,0,0.03);
+        background-color: rgba(0,0,0,0.01);
         position: absolute;
         bottom: 20px;
         left: 35%;
@@ -531,71 +568,74 @@ article img {
         border: 1px solid white;
         padding: 5px;
         transform: translateY(20px);
-
     }
 
-    h1 {
-       margin-top: 40vh;
-        font-family: 'Rancho', cursive;
+    .facts {
+        margin: 0 1vw;
+    }
+    .facts iframe {
+        margin: 0;
+        padding: 0;
+    justify-content: center;
     }
 
-   h1, h2 {
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    footer {
-        display: flex;
-        justify-content: space-between;
-    }
 }
-/****************************************** Media (max-width: 800px) **************************************************/
-@media screen and (min-width: 800px){
-
-    body {
-        background-image: url("");  /*Definition for responsive images for tables*/
+/******************************* Media (min-width: 750) and (max-width: 1800px) ***************************************/
+@media screen and (min-width:750px) {
+    article p, section p, aside p, li{
+        font-family: "Trebuchet MS", Garamond, sans-serif;
+        font-size: 2rem;
+        line-height: 1.5;
     }
 
     header {
         position: relative;
+        height: 15vh;
     }
 
-    .top-bar {
-        width: 100%;
+    button.menu {
+        display: none;
+    }
+
+    nav {
         position: absolute;
-        top: 0;
+        top: 55px;
         left: 0;
-        background-color: transparent;
+        width: 100%;
+        margin: 0;
+        background-color: black;
     }
 
-.page-content-wrap {
-    height: 50px;
-    /*padding: 50px 50px;*/
-}
-
-    footer {
+    nav ul {
+        position: absolute;
         display: flex;
-        justify-content: space-between;
-    }
-}
-/****************************************** Media (max-width: 1200px) **************************************************/
-@media screen and (min-width: 800px) {
-
-
-    body {
-        background-image: url( );  /*Definition for responsive images for tables*/
     }
 
-    header {
-        position: relative;
-    }
-
-    .top-bar {
+    nav li {
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: transparent;
+        flex: 1;
+    }
+
+    nav a {
+        color: #ffffff;
+        line-height: 2vh;
+        text-align: left;
+        padding-left: 30px;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        font-family: 'Rancho', 'Frank Ruhl Libre', 'Aladin', 'Berkshire Swash', cursive, serif;
+    }
+
+    nav a:hover,
+    nav a:active,
+    nav a:focus {
+        background-color: rgba(250 250 217 0.3);
+        color: #21433B;
+    }
+
+    .show main,
+    .show footer {
+        transform: translateX(90%);
     }
 
     .page-content-wrap {
@@ -607,4 +647,180 @@ article img {
         justify-content: space-between;
     }
 
+    header h1 {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        position: absolute;
+        top: 4vh;
+        right: 6vw;
+        font-family: 'Rancho', cursive;
+        font-size: 4rem;
+    }
+
+    header a {
+        text-align: center;
+        color: #FFFFFF;
+        padding: 1vh;
+     }
+
+    /********************************       Flex-Container parameters       *************************************/
+    main {
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /********************************       Hero-Slider Alignment       ****************************************/
+    .hero-slider {
+        padding: 10px;
+        flex: 0 0 90%;
+        height: auto;
+        width: 75vmin;
+        z-index: 900;
+        overflow: hidden;
+        order: -1;
+    }
+    /****************************   Alignment Main section in the middle of screen    *************************/
+    #section-01 {
+        box-sizing: border-box;
+        border-bottom: 1px dashed midnightblue;
+        padding: 5% 5%;
+        flex: 0 0 100%;
+    }
+
+    #section-01 h2 {
+        text-align: center;
+        font-size: 3rem;
+    }
+    #section-01 .logo {
+        width: 50%;
+        order: -1;
+    }
+
+    /*****************************        Jamaican Proverbs Alignment         ******************************/
+    .lcl-proverb {
+        padding: 5%;
+        flex: 1 1 40%;
+        order: 1;
+    }
+    .lcl-proverb blockquote {
+        font-size: 4rem;
+    }
+    /****************************        Population Growth Alignment         *******************************/
+    .population {
+        box-sizing: border-box;
+        padding: 5%;
+        flex: 1 1 60%;
+        order: 1;
+    }
+
+    .population table {
+        padding: 5% 5%;
+        margin: 5% 5%;
+    }
+    table {
+        font-family: arial, sans-serif;
+        font-size: 1.5rem;
+        border-collapse: collapse;
+        width: 40vmax;
+        margin: 2vh 0;
+    }
+
+    .population table caption {
+        padding: 2% 0;
+    }
+
+    footer .credits {
+        font-size: 1.5rem;
+    }
+    footer .contact {
+        text-align: right;
+        font-size: 1.5rem;
+    }
+
+    .facts {
+        margin: 0 2vw;
+    }
+    .facts h1,
+    .facts h2,
+    .facts h3 {
+        text-align: center;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        font-size: 8vh;
+        font-family: 'Aladin', 'Rancho', 'Berkshire Swash', cursive, serif;
+    }
+    .col iframe {
+        margin: 0;
+        padding: 0;
+        align-self: stretch;
+        justify-self: baseline;
+    }
+
+    .container {
+        margin-right: 2%;
+        padding: 2%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+
+    .col h4{
+        font-size: 2vh;
+    }
+    .col-01 {
+        grid-column : 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .col-02 {
+        grid-column : 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .col-03 {
+        grid-column : 1 / 2;
+        grid-row: 2 / 3;
+
+    }
+    .col-04 {
+        grid-column : 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .col-05 {
+        grid-column : 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .col-06 {
+        grid-column : 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .col-07 {
+        grid-column : 1 / 2;
+        grid-row: 4 / 5;
+    }
+    .col-08 {
+        grid-column : 2 / 3;
+        grid-row: 4 / 5;
+    }
+    .col-09 {
+        grid-column : 1 / 2;
+        grid-row: 5 / 6;
+    }
+    .col-10 {
+        grid-column : 2 / 3;
+        grid-row: 5 / 6;
+    }
+    .col-11 {
+        grid-column : 1 / 2;
+        grid-row: 6 / 7;
+    }
+    .col-12 {
+        grid-column : 2 / 3;
+        grid-row: 6 / 7;
+    }
 }
+
+

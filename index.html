@@ -2,31 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" , user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jamaica</title>
 
-    <!--Local Stylesheet    -->
-    <link rel="stylesheet" href="jamstyles/styles-menu-slide-out.css">
-    <link rel="stylesheet" href="jamstyles/homepage.css">
-
-    <!--  Local JavaScript Files  -->
-    <script src="myscripts/script-slider.js"></script>
-    <script src="myscripts/jquery-3.4.1.min.js"></script>
-    <script src="myscripts/jquery.cycle2.min.js"></script>
-<!--    <script src="scripts/script-mobile-nav-for-animated-scroll.js"></script>-->
-<!--    <script src="scripts/script-animated-scroll.js"></script>-->
-
     <!--  Imported Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
-    <style>@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');</style>
-    <link href="https://fonts.googleapis.com/css?family=Aladin|Berkshire+Swash|Rancho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin%7cBerkshire+Swash%7cRancho&display=swap" rel="stylesheet">
+
+    <!--Local Stylesheet    -->
+    <link rel="stylesheet" href="jamstyles/homepage.css">
+
 
 </head>
 <body>
 <div class="wrapper">
     <header>
-        <div class="top-bar">
+<!--        <div class="top-bar">-->
             <h1><a href="index.html">My Island Home</a></h1>
             <button id="menu" class="menu">
                     <span class="button-content" tabindex="-1">
@@ -34,14 +27,14 @@
                         <span class="bar"></span>
                     </span>
             </button>
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#0">About</a></li>
+                    <li><a href="slider.html">FunFacts</a></li>
                     <li><a href="credits.html">Credits</a></li>
                 </ul>
             </nav>
-        </div>
+<!--        </div>-->
     </header>
     <div class="page-content-wrap">
         <main>
@@ -53,9 +46,14 @@
                      data-cycle-next="#next"
                      data-cycle-pager="#adv-custom-pager"
                      data-cycle-pager-template="<a href='#'> <img src='{{src}}' alt='{{alt}}'></a>">
-                    <img src="jampics/jamaica-1362601_1920.jpg" alt="Sunset"/>
-                    <img src="jampics/jamaica-2695087_1920.jpg" alt="Dunn's River Falls">
-                    <img src="jampics/sun-of-jamaica-910070_1920.jpg" alt="Sunset in Jamaica">
+                    <img srcset="jampics/jamaica-2695087_500.jpg 500w, jampics/jamaica-2695087_1920.jpg  1000w"
+                         src="jampics/jamaica-2695087_1920.jpg" sizes="(max-width: 960px) calc(100vw - 60px) and 900px" alt="Dunn's River Falls">
+                    <img srcset="jampics/jamaica-1362601_500.jpg 500w, jampics/jamaica-1362601_1920.jpg  1000w"
+                         src="jampics/jamaica-1362601_1920.jpg" sizes="(max-width: 960px) calc(100vw - 60px) and 900px" alt="Jamaican Sunset">
+                    <img srcset="jampics/jamaica-Canon2128150_500.jpg 500w, jampics/jamaica-2128150_1920.jpg  1000w"
+                         src="jampics/jamaica-Canon2128150_500.jpg" sizes="(max-width: 960px) calc(100vw - 60px) and 900px" alt="Canon at Rose Hall Great House">
+                    <img srcset="jampics/sun-of-jamaica-910070_500.jpg 500w, jampics/sun-of-jamaica-910070_1920.jpg  1000w"
+                         src="jampics/sun-of-jamaica-910070_1920.jpg" sizes="(max-width: 960px) calc(100vw - 60px) and 900px" alt="Jamaica's Sunset">
                 </div>
                 <div id="adv-custom-pager" class="hero-slider-th-container"></div>
                 <!--Defining button controls-->
@@ -71,62 +69,70 @@
                     </button>
                 </div>
             </div><!-- end hero-slider -->
-            <article id="section-01">
-                <h1>Welcome to my Island Home</h1>
-                <p><span>
-
-                    </span></p>
-            </article>
-            <section>
-                <h2></h2>
-                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque deleniti dolor enim eos facere iure laudantium nam necessitatibus nobis, odit quam quis rerum tenetur ullam vel veritatis voluptatem voluptates?</span></p>
-            </section>
-            <section class="population">
-                <h2>Population Growth</h2>
-                <p>The current population of Jamaica is 2,951,697 as of Sunday, October 6, 2019, based on
-                    Worldometers elaboration of the latest United Nations data.</p>
-                <ul>
-                    <li>Jamaica 2019 population is estimated at 2,948,279 people at mid year according to UN data.</li>
-                    <li>Jamaica population is equivalent to 0.04% of the total world population.</li>
-                    <li>Jamaica ranks number 138 in the list of countries (and dependencies) by population.</li>
-                    <li>The population density in Jamaica is 272 per Km2 (705 people per mi2).</li>
-                    <li>The total land area is 10,830 Km2 (4,181 sq. miles)</li>
-                    <li>55.2 % of the population is urban (1,627,119 people in 2019)</li>
-                    <li>The median age in Jamaica is 29.4 years.</li>
-                </ul>
-                <table border="1">
-                    <caption><strong><i>Jamaica Population</i></strong></caption>
-                    <thead>
-                    <tr>
-                        <th>Year</th>
-                        <th>Population</th>
-                        <th>+/- % Change</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>2019</td>
-                        <td>2,951,697</td>
-                        <td>+0.46%</td>
-                    </tr>
-                    <tr>
-                        <td>2009</td>
-                        <td>2,795,837</td>
-                        <td>+0.5%</td>
-                    </tr>
-                    <tr>
-                        <td>1999</td>
-                        <td>2,632,675</td>
-                        <td>+0.91%</td>
-                    </tr>
-                    <tr>
-                        <td>1989</td>
-                        <td>2,403,464</td>
-                        <td>+0.59%</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
+<!--            <div class="flex-container">-->
+                <article id="section-01">
+                    <h2>Welcome to my Island Home</h2>
+                    <a class="logo" href="#"><img src="jampics/255px-Flag_of_Jamaica.svg.png" height="128" width="255" alt="Jamaica Flag"/></a>
+                    <p><span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque deleniti dolor enim eos facere iure laudantium nam necessitatibus nobis, odit quam quis rerum tenetur ullam vel veritatis voluptatem voluptates?
+                </span></p>
+                </article>
+                <section class="population">
+                    <h2>Population Growth</h2>
+                    <p>The current population of Jamaica is 2,951,697 as of Sunday, October 6, 2019, based on
+                        Worldometers elaboration of the latest United Nations data.</p>
+                    <ul>
+                        <li>Jamaica 2019 population is estimated at 2,948,279 people at mid year according to UN data.
+                        </li>
+                        <li>Jamaica population is equivalent to 0.04% of the total world population.</li>
+                        <li>Jamaica ranks number 138 in the list of countries (and dependencies) by population.</li>
+                        <li>The population density in Jamaica is 272 per Km2 (705 people per mi2).</li>
+                        <li>The total land area is 10,830 Km2 (4,181 sq. miles)</li>
+                        <li>55.2 % of the population is urban (1,627,119 people in 2019)</li>
+                        <li>The median age in Jamaica is 29.4 years.</li>
+                    </ul>
+                    <table>
+                        <caption><strong><i>Jamaica Population</i></strong></caption>
+                        <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Population</th>
+                            <th>+/- % Change</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2019</td>
+                            <td>2,951,697</td>
+                            <td>+0.46%</td>
+                        </tr>
+                        <tr>
+                            <td>2009</td>
+                            <td>2,795,837</td>
+                            <td>+0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>1999</td>
+                            <td>2,632,675</td>
+                            <td>+0.91%</td>
+                        </tr>
+                        <tr>
+                            <td>1989</td>
+                            <td>2,403,464</td>
+                            <td>+0.59%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <aside class="lcl-proverb">
+                    <h2>Jamaican Proverb</h2>
+                    <blockquote>"Nuh romp wid mawga cow, a cudda bull mumma!"</blockquote>
+                    <p>
+                        <span>English translation</span>: Don’t play with a skinny cow it could be the bull’s mother.</p>
+                    <p>Proverb Meaning: Don’t underestimate people who may seem weak and insignificant because you don’t
+                        know what kind of powerful and influential people they have in their corner.</p>
+                </aside>
+<!--            </div>-->
         </main>
         <footer>
             <div class="credits">
@@ -136,7 +142,7 @@
             </div>
             <div class="contact">
                 <address>
-                    Written by <a href="#0">Tamika Burgess-Rose</a>
+                    Written by <a href="#">Tamika Burgess-Rose</a>
                     <br>
                     BCIT Downtown Campus
                     <br>
@@ -148,12 +154,17 @@
                 </address>
             </div>
         </footer>
-    </div>
-</div>
-
+    </div> <!--Page-Content-Wrap ends here-->
+</div>  <!--wrapper ends here-->
 <!--Scripts can be inserted here-->
-<a href="#section-01" class="top-link"><span>&uarr;</span> <span>Top</span></a>
-<script src="scripts/script-mobile-nav-for-animated-scroll.js"></script>
-<script src="scripts/script-animated-scroll.js"></script>
+
+<a href="#main-nav" class="top-link"><span>&uarr;</span> <span>Top</span></a>
+<!--  Local JavaScript Files  -->
+<script src="myscripts/my-position-fixed.js"></script>
+<script src="myscripts/script-animated-scroll.js"></script>
+<script src="myscripts/script-menu-overlay.js"></script>
+<script src="myscripts/script-slider.js"></script>
+<script src="myscripts/jquery-3.4.1.min.js"></script>
+<script src="myscripts/jquery.cycle2.min.js"></script>
 </body>
 </html>
