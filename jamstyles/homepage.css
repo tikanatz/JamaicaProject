@@ -180,6 +180,11 @@ article p, section p, aside p, li{
     line-height: 1.5;
 }
 
+article span {
+    font-style: italic;
+    font-weight: bolder;
+}
+
 aside blockquote {
     font-style: italic;
     font-weight: bolder;
